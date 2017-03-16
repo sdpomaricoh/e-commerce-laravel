@@ -6,7 +6,7 @@
 		<div class="reg">
         	<h3>Register</h3>
 			<p>Welcome, please enter the following details to continue.</p>
-			<p>If you have previously registered with us, <a href="#">click here</a></p>
+			<p>If you have previously registered with us, <a href="{{ route('login') }}">click here</a></p>
         	<form role="form" method="POST" action="{{ route('register') }}">
 	            {{ csrf_field() }}
 	            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
