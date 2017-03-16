@@ -35,8 +35,8 @@
 					<a href="index.html">N-AIR</a>
 				</div>
 				<div class="login-bars">
-					<a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
-					<a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+					<a class="btn btn-default log-bar" href="{{ url('/register') }}" role="button">Sign up</a>
+					<a class="btn btn-default log-bar" href="{{ route('login') }}" role="button">Login</a>
 					<div class="cart box_1">
 						<a href="checkout.html">
 							<h3>
