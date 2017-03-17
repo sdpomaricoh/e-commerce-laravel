@@ -1,95 +1,76 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('carousel')
+<div class="header-end">
+	<div class="container">
+		<div id="mainCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#mainCarousel" data-slide-to="1"></li>
+				<li data-target="#mainCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+			  <div class="item active">
+				  <img src="img/shoe3.jpg" alt="...">
+				  <div class="carousel-caption car-re-posn">
+					  <h3>AirMax</h3>
+					  <h4>You feel to fall</h4>
+					  <span class="color-bar"></span>
+				  </div>
+			  </div>
+			  <div class="item">
+				<img src="img/shoe1.jpg" alt="...">
+				  <div class="carousel-caption car-re-posn">
+					  <h3>AirMax</h3>
+					  <h4>You feel to fall</h4>
+					  <span class="color-bar"></span>
+				  </div>
+			  </div>
+			  <div class="item">
+				<img src="img/shoe2.jpg" alt="...">
+				  <div class="carousel-caption car-re-posn">
+					  <h3>AirMax</h3>
+					  <h4>You feel to fall</h4>
+					  <span class="color-bar"></span>
+				  </div>
+			  </div>
+			</div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev">
+			  <span class="glyphicon glyphicon-chevron-left car-icn" aria-hidden="true"></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next">
+			  <span class="glyphicon glyphicon-chevron-right car-icn" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+</div>
+@endsection
+@section('content')
+<div class="feel-fall">
+	<div class="container">
+		<div class="pull-left fal-box">
+			<div class=" fall-left">
+				<h3>Fall</h3>
+				<img src="img/f-l.png" alt="/" class="img-responsive fl-img-wid">
+				<p>Inspiration and innovation<br> for every athlete in the world</p>
+				<span class="fel-fal-bar"></span>
+			</div>
+		</div>
+		<div class="pull-right fel-box">
+			<div class="feel-right">
+				<h3>Feel</h3>
+				<img src="img/f-r.png" alt="/" class="img-responsive fl-img-wid">
+				<p>Inspiration and innovation<br> for every athlete in the world</p>
+				<span class="fel-fal-bar2"></span>
+			</div>
+		</div>
+	<div class="clearfix"></div>
+	</div>
+</div>
+@endsection
