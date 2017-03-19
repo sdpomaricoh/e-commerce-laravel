@@ -20,7 +20,7 @@ class ProductsController extends Controller
 		$this->middleware('auth');
 	}
 
-    /**
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -98,7 +98,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product =  Product::find($id);
+		$product =  Product::find($id);
 		$categories = CategoryProduct::all();
 
 		$product->name = $request->name;
@@ -122,6 +122,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+		$product =  Product::destroy($id);
+		return redirect('/products');
     }
 }
