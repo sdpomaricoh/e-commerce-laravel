@@ -5,8 +5,8 @@
 		<div class="row">
 			<div class="reg">
 				<div class="col-md-8 col-md-offset-2">
-					<h3 class="text-center">Create Products</h3>
-					@include('products.form',['product'=>$product,'url'=>'/products','method'=>'POST','action'=>'Create'])
+					<h3 class="text-center">Edit Products</h3>
+					@include('products.form',['product'=>$product,'url'=>'/products'.$product->id,'method'=>'PATCH','action'=>'Edit'])
 				</div>
 			</div>
 		</div>

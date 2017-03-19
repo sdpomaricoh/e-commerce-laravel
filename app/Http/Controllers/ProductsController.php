@@ -39,7 +39,8 @@ class ProductsController extends Controller
     public function create()
     {
 		$categories = CategoryProduct::all();
-		return view('products.create',['categories'=>$categories]);
+		$product =  new Product();
+		return view('products.create',['categories'=>$categories,'product'=>$product]);
     }
 
     /**
@@ -51,6 +52,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
 		$data = $request->all();
+		$categories = CategoryProduct::all();
 		$product = new Product($data);
 		$product->uuid = Uuid::generate(4);
 		$product->user_id = Auth::user()->id;
@@ -58,7 +60,7 @@ class ProductsController extends Controller
 		if($product->save()){
 			return redirect('/products');
 		}else{
-			return view('products.create');
+			return view('products.create',['categories'=>$categories,'product'=>$product]);
 		}
 
     }
@@ -82,7 +84,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+		$categories = CategoryProduct::all();
+		$product =  Product::find($id);
+		return view('products.edit',['categories'=>$categories,'product'=>$product]);
     }
 
     /**
@@ -94,7 +98,20 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product =  Product::find($id);
+		$categories = CategoryProduct::all();
+
+		$product->name = $request->name;
+		$product->pricing = $request->pricing;
+		$product->size = $request->size;
+		$product->category_id = $request->category_id;
+		$product->description = $request->description;
+
+		if($product->save()){
+			return redirect('/products');
+		}else{
+			return view('products.edit',['categories'=>$categories,'product'=>$product]);
+		}
     }
 
     /**
