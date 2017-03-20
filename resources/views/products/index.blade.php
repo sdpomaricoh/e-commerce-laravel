@@ -19,7 +19,7 @@
 					@foreach ($products as $product)
 						<tr>
 							<td>{{$product->id}}</td>
-							<td>{{$product->name}}</td>
+							<td><a href="{{url('products/'.$product->id)}}">{{$product->name}}</a></td>
 							<td>{{$product->description}}</td>
 							<td>{{$product->pricing}}</td>
 							<td>{{$product->size}}</td>
