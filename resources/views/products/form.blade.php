@@ -29,7 +29,7 @@
 		{{ Form::textarea('description',$product->description,['class'=>'form-control','placeholder'=>"Description of product"])}}
 	</div>
 	<div class="form-group">
-		{{ Form::submit($action.' Product')}}
+		{{ Form::submit($action.' Product',['class'=>'btn btn-primary btn-raised'])}}
 	</div>
 	<p class="click">If don't wanna create a product, please click on <a href="{{url('/products')}}"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back to the Products</a></p>
 {!! Form::close() !!}

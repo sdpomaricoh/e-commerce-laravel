@@ -32,7 +32,9 @@
 				</tbody>
 			</table>
 		</div>
-		<a href="{{url('/products/create')}}" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Create Product</a>
+		<div class="floating">
+			<a href="{{url('/products/create')}}" class="btn btn-primary btn-fab pull-right"><i class="material-icons" aria-hidden="true">add</i></a>
+		</div>
 	</div>
 </div>
 @endsection
