@@ -10,7 +10,7 @@ class Product extends Model
 	use Sluggable;
 
 	protected $table = "products";
-	protected $fillable = ['uuid','category_id','name','size','pricing','description'];
+	protected $fillable = ['uuid','category_id','name','size','pricing','description','slug'];
 
 	public function category(){
 		return $this->belongsTo('App\CategoryProduct');

@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
 			$table->text('description');
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->foreign('category_id')->references('id')->on('categories_products')->onDelete('cascade');
+			$table->tinyInteger('frontpage');
 			$table->timestamps();
 		});
     }
