@@ -41,7 +41,7 @@
 						<a href="checkout.html">
 							<h3>
 								<div class="total">
-									<span class="simpleCart_total">$ 120</span>(<span id="simpleCart_quantity" class="simpleCart_quantity">3</span>)
+									<span class="simpleCart_total">$ 120</span>(<span id="simpleCart_quantity" class="simpleCart_quantity">{{$shoppingCart->productSizes()}}</span>)
 								</div>
 							</h3>
 						</a>
