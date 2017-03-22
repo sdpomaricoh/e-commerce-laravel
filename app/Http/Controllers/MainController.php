@@ -17,6 +17,6 @@ class MainController extends Controller
 
 	public function show($slug){
 		$product = Product::where('slug','=',$slug)->get();
-		dd($product);
+		return view('product-detail',['product'=>$product[0]]);
 	}
 }

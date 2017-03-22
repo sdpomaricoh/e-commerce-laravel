@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -32,13 +33,13 @@
 			<div class="container">
 				<div class="header-top">
 				<div class="logo">
-					<a href="index.html">N-AIR</a>
+					<a href="{{url('/')}}">N-AIR</a>
 				</div>
 				<div class="login-bars">
 					<a class="btn btn-default log-bar" href="{{ url('/register') }}" role="button">Sign up</a>
 					<a class="btn btn-default log-bar" href="{{ route('login') }}" role="button">Login</a>
 					<div class="cart box_1">
-						<a href="checkout.html">
+						<a href="{{url('/checkout')}}">
 							<h3>
 								<div class="total">
 									<span class="simpleCart_total">$ 120</span>(<span id="simpleCart_quantity" class="simpleCart_quantity">3</span>)
@@ -101,7 +102,7 @@
 						<li><a href="#">Delivery</a></li>
 						<li><a href="#">Return Policy</a></li>
 						<li><a href="#">Terms & conditions</a></li>
-						<li><a href="contact.html">Sitemap</a></li>
+						<li><a href="#">Sitemap</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 re-ft-grd">
@@ -116,7 +117,7 @@
 				<div class="col-md-2 re-ft-grd">
 					<div class="bt-logo">
 						<div class="logo">
-							<a href="index.html" class="ft-log">N-AIR</a>
+							<a href="{{url('/')}}" class="ft-log">N-AIR</a>
 						</div>
 					</div>
 				</div>
@@ -131,9 +132,8 @@
     </div>
 
     <!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>
 </html>
