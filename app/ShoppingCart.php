@@ -11,9 +11,16 @@ class ShoppingCart extends Model
 
 	protected $fillable = ['status'];
 
+	public function inShoppingCart(){
+		return $this->hasMany('App\inShoppingCart');
+	}
+
+	public function products(){
+		return $this->belongsToMany('App\Product','in_shopping_cart');
+	}
 
 	public function productSizes(){
-		return 4;
+		return $this->products()->count();
 	}
 
 	/**
