@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Webpatser\Uuid\Uuid;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Product extends Model
 {
+	use Sluggable;
 
 	protected $table = "products";
-	protected $fillable = ['uuid','category_id','name','size','pricing','description'];
+	protected $fillable = ['uuid','category_id','name','size','pricing','description','slug'];
 
 	public function category(){
 		return $this->belongsTo('App\CategoryProduct');
@@ -21,5 +22,18 @@ class Product extends Model
 
 	public function images(){
 		return $this->hasMany('App\ProductImage');
+	}
+
+	/**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(){
+		return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
 	}
 }

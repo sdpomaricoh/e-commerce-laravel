@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
-		App\Providers\ShoppingCartProvider::class,
+		Cviebrock\EloquentSluggable\ServiceProvider::class,
 
     ],
 

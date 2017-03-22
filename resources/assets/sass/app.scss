@@ -673,7 +673,7 @@ a.ft-log, a.ft-log:hover {
 }
 
 /* ==========================================================================
-   							9. Register page styles
+   							10. Register page styles
    ========================================================================== */
 .reg-form {
     padding: 3em 0;
@@ -740,7 +740,7 @@ a.ft-log, a.ft-log:hover {
 }
 
 /* ==========================================================================
-   							10. Email reset page styles
+   							11. Email reset page styles
    ========================================================================== */
 .email-form{
 	margin:50px;
@@ -789,9 +789,130 @@ a.ft-log, a.ft-log:hover {
 	}
 }
 
-
 /* ==========================================================================
-   							  11.  Responsive
+   							  12.  Detail Product Style
+   ========================================================================== */
+.shocase-rt-bot{
+	h3 {
+	   font-size: 22px;
+	   text-transform: uppercase;
+	   font-family: 'Pathway Gothic One';
+	   font-weight: 100;
+	   color: #aaa;
+	   margin-bottom: 5px;
+	}
+}
+.flex-control-thumbs li {
+    width: 24% !important;
+	float: left;
+	margin: 0 1% 0 0;
+	display: inline-block;
+	zoom: 1;
+	border: 1px solid #D1CFCF;
+}
+
+.flex-direction-nav{
+	display:none;
+}
+
+li.qty {
+    width: 48%;
+    float: left;
+    margin: 0px 3px;
+	list-style: none;
+	h3{
+	    font-size: 22px;
+	    text-transform: uppercase;
+	    font-family: 'Pathway Gothic One';
+	    font-weight: 100;
+	    margin-bottom: 5px;
+	    color: #aaa;
+	}
+}
+
+.shoe-name{
+	h3,h4{
+		text-transform: uppercase;
+	    font-weight: bold;
+	    font-size: 35px;
+	    font-family: 'Pathway Gothic One';
+	    color: #100B0B;
+	}
+	h4{
+		font-size: 27px;
+	}
+	p {
+	    color: #aaa;
+	    font-family: 'Didact Gothic';
+	    font-weight: 700;
+	    font-size: 15px;
+	    font-style: italic;
+	    line-height: 1.8em;
+	    text-transform: uppercase;
+	}
+}
+
+.rating-stars{
+	width:25%;
+	padding-top: 110px;
+	ul{
+		list-style-type: none;
+		li{
+			display: inline;
+			a{
+				color: #716969;
+				font-size: 15px;
+				&:hover, &:active, &:focus{
+					color: #fb4c29 !important;
+				    transition: 0.5s all;
+				}
+			}
+		}
+	}
+}
+
+li.ad-2-crt {
+    margin-top: 15px !important;
+	list-style: none;
+	a{
+		width: 100%;
+	    background: #100b0b;
+	    color: #fff;
+	    font-family: 'Pathway Gothic One';
+	    font-size: 18px;
+	    border: none;
+	    border-radius: 0;
+		&:hover{
+			background: #fa5400;
+		    color: #fff;
+		    border:none;
+		    transition: 0.5s all;
+		}
+	}
+}
+
+.showcase-last{
+	h3{
+	   text-transform: uppercase;
+	   font-weight: bold;
+	   font-size: 27px;
+	   font-family: 'Pathway Gothic One';
+	   color: #100B0B;
+	   margin:15px 0px;
+	}
+	ul{
+   		list-style-type: none;
+		li{
+			line-height: 1.8em;
+		    font-size: 15px;
+		    color: #aaa;
+		    text-transform: capitalize;
+		    font-family: 'Didact Gothic';
+		}
+	}
+}
+/* ==========================================================================
+   							  13.  Responsive
    ========================================================================== */
 
 @media screen and (max-width: 1024px){
@@ -975,8 +1096,16 @@ a.ft-log, a.ft-log:hover {
 
 	.re-ft-grd {
         padding: 0;
-        float: left;&:nth-child(1),&:nth-child(2){
+        float: left;
+		&:nth-child(1), &:nth-child(2){
 			width: 100%;
+		}
+	}
+	.rating-stars{
+		width: 100%;
+		padding: 10px;
+		ul{
+			display: block;
 		}
 	}
 }
