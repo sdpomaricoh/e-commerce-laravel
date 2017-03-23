@@ -73,8 +73,8 @@
 					<div class="clearfix"></div>
 					<ul>
 						<li class="ad-2-crt simpleCart_shelfItem">
-							<a class="btn item_add" href="#" role="button">Add To Cart</a>
-							<a class="btn" href="#" role="button">Buy Now</a>
+							@include('checkout.form')
+							{{-- <a class="btn item_add" href="#" role="button">Add To Cart</a> --}}
 						</li>
 					</ul>
 				</div>

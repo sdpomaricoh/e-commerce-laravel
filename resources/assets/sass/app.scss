@@ -874,19 +874,21 @@ li.qty {
 li.ad-2-crt {
     margin-top: 15px !important;
 	list-style: none;
-	a{
-		width: 100%;
-	    background: #100b0b;
-	    color: #fff;
-	    font-family: 'Pathway Gothic One';
-	    font-size: 18px;
-	    border: none;
-	    border-radius: 0;
-		&:hover{
-			background: #fa5400;
+	form{
+		input[type="submit"]{
+			width: 100%;
+		    background: #100b0b;
 		    color: #fff;
-		    border:none;
-		    transition: 0.5s all;
+		    font-family: 'Pathway Gothic One';
+		    font-size: 18px;
+		    border: none;
+		    border-radius: 0;
+			&:hover{
+				background: #fa5400;
+			    color: #fff;
+			    border:none;
+			    transition: 0.5s all;
+			}
 		}
 	}
 }
