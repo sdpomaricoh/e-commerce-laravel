@@ -23,6 +23,10 @@ class ShoppingCart extends Model
 		return $this->products()->count();
 	}
 
+	public function total(){
+		return $this->products()->sum('pricing');
+	}
+
 	/**
 	 * [findOrCreateBySessionId Search or create a shopping cart according to the case]
 	 * @param  [integer] $shoppingcart_id [id of shopping cart]

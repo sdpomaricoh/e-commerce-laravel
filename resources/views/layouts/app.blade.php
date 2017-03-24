@@ -42,7 +42,7 @@
 						<a href="{{url('/checkout')}}">
 							<h3>
 								<div class="total">
-									<span class="simpleCart_total">$ 120</span>(<span id="simpleCart_quantity" class="simpleCart_quantity">{{$shoppingCart->productSizes()}}</span>)
+									<span class="simpleCart_total">$ {{$shoppingCart->total() }} USD</span>(<span id="simpleCart_quantity" class="simpleCart_quantity">{{$shoppingCart->productSizes()}}</span>)
 								</div>
 							</h3>
 						</a>
