@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@home');
+Route::get('/checkout', 'ShoppingCartController@index');
 Route::get('/product/{slug}', 'MainController@show');
 
 Route::resource('products', 'ProductsController');

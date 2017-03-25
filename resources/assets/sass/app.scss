@@ -916,6 +916,120 @@ li.ad-2-crt {
 /* ==========================================================================
    							  13.  Responsive
    ========================================================================== */
+.check {
+   padding: 3em 0;
+}
+
+.price-details{
+	h3 {
+	   color: #100b0b;
+	   font-size: 25px;
+	   margin-bottom: 1em;
+	   font-family: 'Pathway Gothic One';
+	}
+	span{
+		width: 50%;
+        float: left;
+        font-size: 15px;
+        color:#aaa;
+        line-height: 1.8em;
+	}
+}
+
+ul.total_price {
+    list-style-type: none;
+	li.last_price {
+	    width: 50%;
+	    float: left;
+		h4{
+			color: #655858;
+		    margin-top: 5px;
+		}
+		span{
+			font-size: 20px;
+			color: #655858;
+		}
+	}
+}
+
+a.order {
+    background: #100b0b;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2em;
+    font-family: 'Pathway Gothic One';
+    text-transform: uppercase;
+	&:hover{
+		background: #fa5400;
+	    transition: 0.5s all;
+	}
+}
+
+.cart-items{
+	h1 {
+	    font-family: 'Pathway Gothic One';
+	    font-size: 35px;
+	    margin-bottom: 20px;
+	    font-weight: 400;
+	    text-transform: uppercase;
+	    color: #100b0b;
+	}
+}
+
+.cart-item {
+    width: 20%;
+    float: left;
+    margin-right: 2em;
+}
+
+.close{
+    position: absolute;
+    right: 0%;
+    font-size: 20px;
+    cursor: pointer;
+	&:hover{
+		color: #100b0b;
+	}
+}
+
+.cart-item-info {
+    width: 75%;
+    float: left;
+    margin-top: 3em;
+}
+
+ul.qty {
+    list-style-type: none;
+	li{
+		display: inline-block;
+	    margin-right: 10%;
+	}
+}
+
+.delivery {
+   margin: 3em 0;
+   p{
+	   color: #aaa;
+	   font-size: 16px;
+	   font-weight: 400;
+	   float: left;
+   }
+   span{
+	   color: #aaa;
+	   font-size: 1em;
+	   font-weight: 400;
+	   float: right;
+   }
+}
+
+/* ==========================================================================
+   							  14.  Responsive
+   ========================================================================== */
 
 @media screen and (max-width: 1024px){
    .collapse-pdng {
