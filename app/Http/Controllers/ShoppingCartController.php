@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ShoppingCart;
+use App\PayPal;
 
 class ShoppingCartController extends Controller
 {
@@ -20,7 +21,8 @@ class ShoppingCartController extends Controller
 
 		$products = $shoppingCart->products()->get();
 		$total = $shoppingCart->total();
-
+		$payment = new PayPal($shoppingCart);
+		dd($payment);
 		return view('checkout.show',['products'=>$products,'total'=>$total]);
     }
 }
