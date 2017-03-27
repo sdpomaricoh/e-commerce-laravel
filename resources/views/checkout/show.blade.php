@@ -18,10 +18,10 @@
 			   <div class="clearfix"> </div>
 			</ul>
 			<div class="clearfix"></div>
-			<a class="order" href="#">Place Order</a>
+			<a class="order" href="{{url('/payment')}}">Pay Order</a>
 		</div>
 		<div class="col-md-9 cart-items">
-			<h1>My Shopping Bag (2)</h1>
+			<h1>My Shopping Bag ({{$productSizes}})</h1>
 			@foreach ($products as $product)
 			<div class="cart-header">
 				<div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>

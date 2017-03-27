@@ -35,6 +35,15 @@ class PayPal
 											->setPayer($this->payer())
 											->setTransactions([$this->transaction()])
 											->setRedirectUrls($this->redirectUrl());
+
+		try {
+			$payment->create($this->_apiContext);
+		} catch (\Exception $ex) {
+			dd($ex);
+			exit(1);
+		}
+
+		return $payment;
 	}
 
 	/**
@@ -42,7 +51,7 @@ class PayPal
 	 * @return [Method] [define the payment method]
 	 */
 	public function payer(){
-		return PaypalPayment::payer()->setPaymentMethod("paypal");
+		return \PaypalPayment::payer()->setPaymentMethod("paypal");
 	}
 
 	/**
@@ -50,7 +59,7 @@ class PayPal
 	 * @return [Method] [get the amount info]
 	 */
 	public function transaction(){
-		return PaypalPayment::transaction()->setAmount($this->amount())
+		return \PaypalPayment::transaction()->setAmount($this->amount())
 										   ->setItemList($this->items())
 										   ->setDescription("Your purchase on N-Air")
 										   ->setInvoiceNumber(uniqid());
@@ -62,7 +71,7 @@ class PayPal
 	 */
 	public function redirectUrl(){
 		$baseUrl = url('/');
-		return PaypalPayment::redirectUrls()->setReturnUrl("$baseUrl/payments")
+		return \PaypalPayment::redirectUrls()->setReturnUrl("$baseUrl/payments")
 											->setCancelUrl("$baseUrl/checkout");
 	}
 
@@ -71,7 +80,7 @@ class PayPal
 	 * @return [Method] [define the currency and amount of transaction]
 	 */
 	public function amount(){
-		return PaypalPayment::amount()->setCurrency("USD")
+		return \PaypalPayment::amount()->setCurrency("USD")
 									  ->setTotal($this->shoppingCart->total());
 	}
 
@@ -87,7 +96,7 @@ class PayPal
 			array_push($items,$product->PayPalItem());
 		}
 
-		return PaypalPayment::itemList()->setItems($items);
+		return \PaypalPayment::itemList()->setItems($items);
 	}
 
 }

@@ -42,7 +42,7 @@ class Product extends Model
 	 * @return [Method] [Define the characteristics of a product for paypal]
 	 */
 	public function PayPalItem() {
-		return PaypalPayment::item()->setName($this->name)
+		return \PaypalPayment::item()->setName($this->name)
 									->setDescription($this->description)
 									->setCurrency('USD')
 									->setQuantity(1)
