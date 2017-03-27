@@ -13,7 +13,7 @@ class ShoppingCartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
 		$shoppingCart = $this->getShoppingCartBySession();
 		$products = $shoppingCart->products()->get();
@@ -22,7 +22,7 @@ class ShoppingCartController extends Controller
 		return view('checkout.show',['products'=>$products,'total'=>$total,'productSizes'=>$productSizes]);
     }
 
-	public function pay(){
+	public function payment(){
 		$shoppingCart = $this->getShoppingCartBySession();
 		$paypal = new PayPal($shoppingCart);
 		$payment = $paypal->generate();

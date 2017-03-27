@@ -13,8 +13,9 @@
 
 Route::get('/', 'MainController@home');
 Route::get('/product/{slug}', 'MainController@show');
-Route::get('/checkout', 'ShoppingCartController@index');
-Route::get('/payment', 'ShoppingCartController@pay');
+Route::get('/checkout', 'ShoppingCartController@show');
+Route::get('/payments', 'ShoppingCartController@payment');
+Route::get('/payments/store', 'PaymentController@store');
 
 Route::resource('products', 'ProductsController');
 Route::resource('checkout', 'inShoppingCartController',['only'=>['store','destroy']]);

@@ -71,7 +71,7 @@ class PayPal
 	 */
 	public function redirectUrl(){
 		$baseUrl = url('/');
-		return \PaypalPayment::redirectUrls()->setReturnUrl("$baseUrl/payments")
+		return \PaypalPayment::redirectUrls()->setReturnUrl("$baseUrl/payments/store")
 											->setCancelUrl("$baseUrl/checkout");
 	}
 
@@ -97,6 +97,18 @@ class PayPal
 		}
 
 		return \PaypalPayment::itemList()->setItems($items);
+	}
+
+	/**
+	 * [Execute the payment by the user]
+	 * @param  [String] $paymentId [transaction id generate by PayPal]
+	 * @param  [String] $PayerID   [account id of payer]
+	 * @return [Method]            [execute the payment]
+	 */
+	public function execute($paymentId,$PayerID){
+		$payment =  \PaypalPayment::getById($paymentId,$this->_apiContext);
+		$execution = \Paypalpayment::PaymentExecution()->setPayerId($PayerID);
+		return $payment->execute($execution,$this->_apiContext);
 	}
 
 }

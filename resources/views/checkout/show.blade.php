@@ -18,7 +18,7 @@
 			   <div class="clearfix"> </div>
 			</ul>
 			<div class="clearfix"></div>
-			<a class="order" href="{{url('/payment')}}">Pay Order</a>
+			<a class="order" href="{{url('/payments')}}">Pay Order</a>
 		</div>
 		<div class="col-md-9 cart-items">
 			<h1>My Shopping Bag ({{$productSizes}})</h1>
