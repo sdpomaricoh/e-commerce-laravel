@@ -179,6 +179,7 @@ return [
 		Collective\Html\HtmlServiceProvider::class,
 		Cviebrock\EloquentSluggable\ServiceProvider::class,
 		App\Providers\ShoppingCartProvider::class,
+		Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
 		'Uuid' => Webpatser\Uuid\Uuid::class,
 		'Form' => Collective\Html\FormFacade::class,
       	'Html' => Collective\Html\HtmlFacade::class,
+		'PaypalPayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
     ],
 
 ];

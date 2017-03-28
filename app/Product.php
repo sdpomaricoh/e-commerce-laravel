@@ -36,4 +36,16 @@ class Product extends Model
             ]
         ];
 	}
+
+	/**
+	 * [Set a product with format of paypal]
+	 * @return [Method] [Define the characteristics of a product for paypal]
+	 */
+	public function PayPalItem() {
+		return \PaypalPayment::item()->setName($this->name)
+									->setDescription($this->description)
+									->setCurrency('USD')
+									->setQuantity(1)
+									->setPrice($this->pricing);
+	}
 }
