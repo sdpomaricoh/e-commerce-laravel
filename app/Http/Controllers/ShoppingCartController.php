@@ -8,12 +8,8 @@ use App\PayPal;
 
 class ShoppingCartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+
+	public function view()
     {
 		$shoppingCart = $this->getShoppingCartBySession();
 		$products = $shoppingCart->products()->get();

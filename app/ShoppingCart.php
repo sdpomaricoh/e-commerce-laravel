@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Webpatser\Uuid\Uuid;
 
 class ShoppingCart extends Model
 {
 
 	protected $table = "shoppingcart";
 
-	protected $fillable = ['status'];
+	protected $fillable = ['status','custom_id'];
 
 	public function inShoppingCart(){
 		return $this->hasMany('App\inShoppingCart');
@@ -19,12 +20,37 @@ class ShoppingCart extends Model
 		return $this->belongsToMany('App\Product','in_shopping_cart');
 	}
 
+	public function order(){
+		return $this->hasOne('App\Order')->first();
+	}
+
 	public function productSizes(){
 		return $this->products()->count();
 	}
 
 	public function total(){
 		return $this->products()->sum('pricing');
+	}
+
+	/**
+	 * [generateCustomID generate universal unique identifier]
+	 * @return [String] [custom_id]
+	 */
+	public function generateCustomID(){
+		return Uuid::generate(4);
+	}
+
+	/**
+	 * [updateCustomIDAndStatus update custom_id and status of shopping cart]
+	 */
+	public function updateCustomIDAndStatus(){
+		$this->custom_id = $this->generateCustomID();
+		$this->status    = "approved";
+		$this->save();
+	}
+
+	public function approved(){
+		$this->updateCustomIDAndStatus();
 	}
 
 	/**

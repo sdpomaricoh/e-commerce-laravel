@@ -1028,7 +1028,38 @@ ul.qty {
 }
 
 /* ==========================================================================
-   							  14.  Responsive
+   					      14.  Purchase Page Style
+   ========================================================================== */
+.purchase{
+	h2{
+		font-family: 'Pathway Gothic One';
+		font-size: 42px;
+		margin-bottom: 50px
+	}
+	.alert{
+		background-color: #A5E126;
+		color: #FFF;
+		font-size: 20px;
+		.close{
+			color: #FFF;
+			font-size: 24px;
+			opacity: 1;
+		}
+	}
+	.perma-link{
+		color:#A5E126;
+		display: block;
+		font-family: 'Didact Gothic';
+		font-size: 20px;
+		text-align: center;
+	}
+	hr{
+		margin: 30px 0;
+	}
+}
+
+/* ==========================================================================
+   							  15.  Responsive
    ========================================================================== */
 
 @media screen and (max-width: 1024px){

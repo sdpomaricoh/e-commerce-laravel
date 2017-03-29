@@ -16,7 +16,7 @@ class MainController extends Controller
 	}
 
 	public function show($slug){
-		$product = Product::where('slug','=',$slug)->get();
-		return view('product-detail',['product'=>$product[0]]);
+		$product = Product::where('slug','=',$slug)->first();
+		return view('product-detail',['product'=>$product]);
 	}
 }

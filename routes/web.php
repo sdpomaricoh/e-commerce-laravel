@@ -11,11 +11,15 @@
 |
 */
 
+
 Route::get('/', 'MainController@home');
 Route::get('/product/{slug}', 'MainController@show');
-Route::get('/checkout', 'ShoppingCartController@show');
+
+Route::get('/checkout', 'ShoppingCartController@view');
 Route::get('/payments', 'ShoppingCartController@payment');
+
 Route::get('/payments/store', 'PaymentController@store');
+Route::resource('/purchases','PaymentController',['only'=>['show']]);
 
 Route::resource('products', 'ProductsController');
 Route::resource('checkout', 'inShoppingCartController',['only'=>['store','destroy']]);
