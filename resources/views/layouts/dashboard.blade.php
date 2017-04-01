@@ -24,6 +24,25 @@
 
 		<style media="screen">
 			body { padding-top: 70px; }
+			h1{
+				background-color: #BDBDBD;
+				padding: 20px;
+				text-align: left;
+			}
+			.data-info{
+				border-right: 1px solid #BDBDBD;
+				height: 120px;
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+			.data-info p{
+				margin-top: 20px;
+				text-align: center;
+			}
+			.data-info p span{
+				color: #3f51b5;
+				font-size: 32px;
+			}
 		</style>
 
 		<!-- Scripts -->

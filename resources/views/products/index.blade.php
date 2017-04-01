@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="well">
-			<h1 class="text-center">Products</h1>
+			<h1>Products</h1>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>

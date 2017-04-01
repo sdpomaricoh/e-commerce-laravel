@@ -16,11 +16,13 @@ Route::get('/', 'MainController@home');
 Route::get('/product/{slug}', 'MainController@show');
 
 Route::get('/checkout', 'ShoppingCartController@view');
+Route::resource('checkout', 'inShoppingCartController',['only'=>['store','destroy']]);
 Route::get('/payments', 'ShoppingCartController@payment');
 
 Route::get('/payments/store', 'PaymentController@store');
 Route::resource('/purchases','PaymentController',['only'=>['show']]);
 
 Route::resource('products', 'ProductsController');
-Route::resource('checkout', 'inShoppingCartController',['only'=>['store','destroy']]);
+Route::resource('orders','OrdersController',['only'=>['index','update']]);
+
 Auth::routes();

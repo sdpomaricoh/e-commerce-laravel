@@ -23,4 +23,25 @@ class Order extends Model
 	public function address(){
 		return "$this->line1 $this->line2";
 	}
+
+	public static function totalMonth(){
+		return Order::monthly()->sum('total');
+	}
+
+	public static function totalMonthCount(){
+		return Order::monthly()->count();
+	}
+
+	public function scopeLastest($query){
+		return $query->orderID()->monthly();
+	}
+
+	public function scopeOrderID($query){
+		return $query->orderBy('id','desc');
+	}
+
+	public function scopeMonthly($query){
+		return $query->whereMonth('created_at', '=', date('m'));
+	}
+
 }
