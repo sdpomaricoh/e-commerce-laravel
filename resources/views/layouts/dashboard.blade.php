@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">
+
 		<!-- Material Design fonts -->
   		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -89,8 +91,28 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js" ></script>
+		<script type="text/javascript" src="https:///cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 		<script type="text/javascript">
 			$.material.init();
+
+			//Config x-editable
+			$.fn.editable.defaults.mode = 'inline';
+			$.fn.editable.defaults.ajaxOptions = {type: 'PUT'};
+			$.fn.editable.defaults.params = function (params) {
+        		params._token = window.Laravel.csrfToken;
+        		return params;
+    		};
+
+			$(document).ready(function(){
+				$('.set-guide-number').editable();
+				$('.select-status').editable({
+					source: [
+						'created',
+						'sended',
+						'received'
+					]
+				});
+			})
 		</script>
 	</body>
 </html>

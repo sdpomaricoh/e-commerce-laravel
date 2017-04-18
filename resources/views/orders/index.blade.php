@@ -27,8 +27,12 @@
 							<td>{{$order->id}}</td>
 							<td>{{$order->recipient_name}}</td>
 							<td>{{$order->address()}}</td>
-							<td>{{$order->guide_number}}</td>
-							<td>{{$order->status}}</td>
+							<td>
+								<a href="#" data-type="text" data-title="Guide Number" data-pk="{{$order->id}}" data-url="{{url('orders/'.$order->id)}}" data-name="guide_number" class="set-guide-number">{{$order->guide_number}}</a>
+							</td>
+							<td>
+								<a href="#" data-type="select" data-title="Status" data-pk="{{$order->id}}" data-url="{{url('orders/'.$order->id)}}" data-name="status" class="select-status" >{{$order->status}}</a>
+							</td>
 							<td>{{$order->created_at}}</td>
 						</tr>
 					@endforeach
