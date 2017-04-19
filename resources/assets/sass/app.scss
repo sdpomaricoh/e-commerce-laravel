@@ -30,6 +30,13 @@
     position: absolute;
     top: 0%;
     right: 0%;
+	.dropdown-toggle{
+		color: #A5E126;
+		display: block;
+		font-size: 18px;
+		margin-top: 10px;
+		text-decoration: none;
+	}
 }
 .logo a,.logo a:hover {
     font-family: 'Pathway Gothic One';
@@ -1057,9 +1064,37 @@ ul.qty {
 		margin: 30px 0;
 	}
 }
+/* ==========================================================================
+   							  15.  Error style page
+   ========================================================================== */
+.error-handling{
+    text-align: center;
+    h2{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 48px;
+        font-family: 'Pathway Gothic One';
+        color: #100B0B;
+    }
+    .error-icon{
+        color: #AAA;
+        font-size: 400px;
+        display: inline-block;
+        line-height: 420px;
+        text-align: center;
+        width: 100%;
+    }
+    p{
+        font-size: 24px;
+        a{
+            color: #A5E126;
+            text-decoration: none;
+        }
+    }
+}
 
 /* ==========================================================================
-   							  15.  Responsive
+   							  16.  Responsive
    ========================================================================== */
 
 @media screen and (max-width: 1024px){

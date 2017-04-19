@@ -180,6 +180,7 @@ return [
 		Cviebrock\EloquentSluggable\ServiceProvider::class,
 		App\Providers\ShoppingCartProvider::class,
 		Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+		App\Providers\UserProvider::class,
 
     ],
 

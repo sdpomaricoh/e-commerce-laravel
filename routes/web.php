@@ -22,7 +22,10 @@ Route::get('/payments', 'ShoppingCartController@payment');
 Route::get('/payments/store', 'PaymentController@store');
 Route::resource('/purchases','PaymentController',['only'=>['show']]);
 
-Route::resource('products', 'ProductsController');
-Route::resource('orders','OrdersController',['only'=>['index','update']]);
+Route::group(['prefix' => 'admin'], function () {
+	Route::get('/', 'AdminController@index');
+	Route::resource('products', 'ProductsController');
+	Route::resource('orders','OrdersController',['only'=>['index','update']]);
+});
 
 Auth::routes();

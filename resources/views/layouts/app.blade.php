@@ -36,8 +36,22 @@
 					<a href="{{url('/')}}">N-AIR</a>
 				</div>
 				<div class="login-bars">
-					<a class="btn btn-default log-bar" href="{{ url('/register') }}" role="button">Sign up</a>
-					<a class="btn btn-default log-bar" href="{{ route('login') }}" role="button">Login</a>
+                @if (isset($user))
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">{{$user->name}}</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{url('/logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
+                                <form  id="logout-form" action="{{url('/logout')}}" method="post" style="display:none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @else
+				    <a class="btn btn-default log-bar" href="{{ url('/register') }}" role="button">Sign up</a>
+				    <a class="btn btn-default log-bar" href="{{ route('login') }}" role="button">Login</a>
+                @endif
 					<div class="cart box_1">
 						<a href="{{url('/checkout')}}">
 							<h3>
