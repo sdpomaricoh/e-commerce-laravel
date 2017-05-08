@@ -9,10 +9,20 @@ use App\Order;
 
 class PaymentController extends Controller
 {
+
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('ShoppingCart');
+	}
+
 	public function store(Request $request){
 
-		$shoppingCartId = \Session::get('$shopping_cart_id');
-		$shoppingCart = ShoppingCart::findOrCreateBySessionId($shoppingCartId);
+		$shoppingCart = $request->shoppingCart;
 
 		$paypal = new PayPal($shoppingCart);
 		$response = $paypal->execute($request->paymentId,$request->PayerID);

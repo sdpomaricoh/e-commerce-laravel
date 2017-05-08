@@ -10,6 +10,16 @@ class inShoppingCartController extends Controller
 {
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('ShoppingCart');
+    }
+    
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -18,8 +28,7 @@ class inShoppingCartController extends Controller
     public function store(Request $request)
     {
 		//get the shopping cart id on the session and instance a object ShoppingCart
-		$shoppingCartId = \Session::get('$shopping_cart_id');
-		$shoppingCart = ShoppingCart::findOrCreateBySessionId($shoppingCartId);
+		$shoppingCart = $request->shoppingCart;
 		$response = inShoppingCart::create([
 			'shopping_cart_id' => $shoppingCart->id,
 			'product_id' => $request->product_id

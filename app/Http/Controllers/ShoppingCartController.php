@@ -8,6 +8,15 @@ use App\PayPal;
 
 class ShoppingCartController extends Controller
 {
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('ShoppingCart');
+	}
 
 	public function view()
     {
@@ -27,8 +36,7 @@ class ShoppingCartController extends Controller
 
 	public function getShoppingCartBySession(){
 		//get the shopping cart id on the session and instance a object ShoppingCart
-		$shoppingCartId = \Session::get('$shopping_cart_id');
-		$shoppingCart = ShoppingCart::findOrCreateBySessionId($shoppingCartId);
-		return $shoppingCart ;
+		$shoppingCart = $request->shoppingCart;
+		return $shoppingCart;	
 	}
 }
